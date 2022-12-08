@@ -5,6 +5,7 @@ public class Excercise1a {
             x = x - 1;
             if (x < 3) {
                 System.out.println(x);
+
             }
         }
     }
