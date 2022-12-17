@@ -1,66 +1,32 @@
 package Startup;
 
+import java.util.ArrayList;
+
 public class SimpleStartup {
-    private int[] locationCells;
-    private int numOfHits = 0;
-    
-    public void setLocationsCells ( int[] locs){
-        //locationCells = locs;
+    private ArrayList<String> locationcells;
+    private String name;
+
+    public void setLocationcells(ArrayList<String> loc) {
+        locationcells = loc;
     }
 
-    public String checkYourself ( int guess) {
+    public void setName (String n){
+        name = n;
+    }
+
+    public String checkYourself(String userInput) {
         String result = "miss";
-        for (int cell : locationCells) {
-            if (guess == cell) {
+        int index = locationcells.indexOf(userInput);
+        if (index >= 0) {
+            locationcells.remove(index);
+            if(locationcells.isEmpty()){
+                result = "Kill";
+                System.out.println("Ouch! You sunk " + name + "   : ( ") ;
+            }
+            else {
                 result = "hit";
-                numOfHits++;
-                break;
             }
         }
-        if (numOfHits == locationCells.length) {
-            result = "kill";
-        }
-        System.out.println(result);
         return result;
-
     }
-
-
-
-    public static void main(String[] args) {
-        int numOfGuesses = 0;
-        Gamehelper helper = new Gamehelper();
-
-        SimpleStartup theStartup = new SimpleStartup();
-        int randomNum = (int) (Math.random() * 5);
-
-        int[] locations = {randomNum, randomNum + 1, randomNum + 2};
-        theStartup.setLocationCells(locations);
-
-        boolean isAlive = true;
-        while (isAlive) {
-            int guess = helper.getUserInput(" enter a number");
-            String result = theStartup.checkYourself(guess);
-            numOfGuesses++;
-            if (result.equals("kill")) {
-                isAlive = false;
-                System.out.println("you took " + numOfGuesses + "guesses");
-            }
-        }
-
-    }
-
-    public void setLocationCells(int[] locationCells) {
-        this.locationCells = locationCells;
-    }
-
-    public int[] getLocationCells() {
-        return locationCells;
-    }
-
-////   /* private void setLocationCells(int[] locations) {
-////    }
-//*/
-
 }
-

@@ -3,7 +3,7 @@ package Startup;
 public class SimpleStartupTestDrive {
 
     public static void main(String[] args) {
-        SimpleStartup dot = new SimpleStartup();
+        SimpleStartup1 dot = new SimpleStartup1();
 
         int[] locations = {2,3,4};
         dot.setLocationsCells(locations);
