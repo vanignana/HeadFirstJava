@@ -8,7 +8,7 @@ public class SortMountains {
         new SortMountains().go();
     }
 
-    private void go() {
+    public void go() {
         List<Mountain> mountains = new ArrayList<>();
         mountains.add(new Mountain("Longs",14233));
         mountains.add(new Mountain("Elbert",14688));

@@ -1,14 +1,23 @@
 package datastructures;
 
-public class Songv3 implements Comparable<Songv3>{
+public class Song implements Comparable<Song>{
     private String title;
     private String artist;
     private int bpm;
 
-    public int compareTo(Songv3 s){
+    public boolean equals(Object aSong) {
+        Song other = (Song) aSong;
+        return title.equals(other.getTitle());
+    }
+    public int hashCode(){
+        return title.hashCode();
+    }
+
+    public int compareTo(Song s){
         return title.compareTo(s.getTitle());
     }
-    Songv3(String title, String artist, int bpm) {
+
+    Song(String title, String artist, int bpm) {
         this.title = title;
         this.artist = artist;
         this.bpm = bpm;

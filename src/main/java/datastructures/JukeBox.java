@@ -1,8 +1,6 @@
 package datastructures;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class JukeBox {
     public static void main(String[] args) {
@@ -10,14 +8,17 @@ public class JukeBox {
     }
 
     private void go() {
-        List<Songv3> songList = MockSongs.getSongsv3(); {
+        List<Song> songList = MockSongs.getSongsv3(); {
             System.out.println(songList);
             Collections.sort(songList);
             System.out.println(songList);
 
             ArtistCompare artistCompare = new ArtistCompare();
-            songList.sort((Comparator<? super Songv3>) artistCompare);
+            songList.sort((Comparator<? super Song>) artistCompare);
             System.out.println(songList);
+
+            Set<Song> songSet = new HashSet<>(songList);
+            System.out.println(songSet);
         }
     }
 

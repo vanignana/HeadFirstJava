@@ -2,9 +2,9 @@ package datastructures;
 
 import java.util.Comparator;
 
-public class ArtistCompare implements Comparator<Songv3> {
+public class ArtistCompare implements Comparator<Song> {
 
-    public int compare(Songv3 one, Songv3 two){
+    public int compare(Song one, Song two){
         return one.getArtist().compareTo(two.getArtist());
     }
 }
