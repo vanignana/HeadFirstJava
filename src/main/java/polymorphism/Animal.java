@@ -1,4 +1,4 @@
 package polymorphism;
 
-public class Animal {
-}
+//public class Animal {
+//}
